@@ -36,7 +36,7 @@ $Descr A3 16535 11693
 encoding utf-8
 Sheet 1 1
 Title "2550N"
-Date "22 jun 2014"
+Date "14 Jul 2014"
 Rev "4"
 Comp "BlueZen Electroacoustics"
 Comment1 ""
