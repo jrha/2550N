@@ -43,7 +43,7 @@ partfields -= set( ['Reference', 'Value', 'Datasheet', 'Footprint'] )
 columnset = compfields | partfields     # union
 
 # prepend an initial 'hard coded' list and put the enchillada into list 'columns'
-columns = ['Item', 'Qty', 'Reference(s)', 'Value'] + sorted(list(columnset))
+columns = ['Qty', 'Reference(s)', 'Value'] + sorted(list(columnset))
 
 # Create a new csv writer object to use as the output formatter
 out = csv.writer(f, lineterminator='\n', delimiter=',', quotechar='\"', quoting=csv.QUOTE_MINIMAL)
@@ -67,7 +67,6 @@ grouped = net.groupComponents(components)
 
 
 # Output component information organized by group, aka as collated:
-item = 0
 for group in grouped:
     del row[:]
     refs = ""
@@ -81,8 +80,6 @@ for group in grouped:
         c = component
 
     # Fill in the component groups common data
-    item += 1
-    row.append( item )
     row.append( len(group) )
     row.append( refs );
     row.append( c.getValue() )
