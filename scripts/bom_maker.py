@@ -67,23 +67,6 @@ writerow( out, columns )
 
 # Output all the interesting components individually first:
 row = []
-for c in components:
-    del row[:]
-    row.append('')                                      # item is blank in individual table
-    row.append('')                                      # Qty is always 1, why print it
-    row.append( c.getRef() )                            # Reference
-    row.append( c.getValue() )                          # Value
-    row.append( c.getLibName() + ":" + c.getPartName() ) # LibPart
-    #row.append( c.getDescription() )
-    row.append( c.getFootprint() )
-    row.append( c.getDatasheet() )
-
-    # from column 7 upwards, use the fieldnames to grab the data
-    for field in columns[7:]:
-        row.append( c.getField( field ) );
-
-    writerow( out, row )
-
 
 writerow( out, [] )                        # blank line
 writerow( out, [] )                        # blank line
