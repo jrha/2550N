@@ -57,7 +57,7 @@ def writerow( acsvwriter, columns ):
 
 row = []
 
-writerow( out, columns )                   # reuse same columns
+writerow( out, columns ) # reuse same columns
 
 
 
@@ -81,7 +81,6 @@ for group in grouped:
         c = component
 
     # Fill in the component groups common data
-    # columns = ['Item', 'Qty', 'Reference(s)', 'Value', 'LibPart', 'Footprint', 'Datasheet'] + sorted(list(columnset))
     item += 1
     row.append( item )
     row.append( len(group) )
