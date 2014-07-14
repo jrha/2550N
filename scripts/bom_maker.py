@@ -43,7 +43,7 @@ partfields -= set( ['Reference', 'Value', 'Datasheet', 'Footprint'] )
 columnset = compfields | partfields     # union
 
 # prepend an initial 'hard coded' list and put the enchillada into list 'columns'
-columns = ['Item', 'Qty', 'Reference(s)', 'Value', 'LibPart', 'Footprint', 'Datasheet'] + sorted(list(columnset))
+columns = ['Item', 'Qty', 'Reference(s)', 'Value'] + sorted(list(columnset))
 
 # Create a new csv writer object to use as the output formatter
 out = csv.writer(f, lineterminator='\n', delimiter=',', quotechar='\"', quoting=csv.QUOTE_MINIMAL)
@@ -87,9 +87,6 @@ for group in grouped:
     row.append( len(group) )
     row.append( refs );
     row.append( c.getValue() )
-    row.append( c.getLibName() + ":" + c.getPartName() )
-    row.append( net.getGroupFootprint(group) )
-    row.append( net.getGroupDatasheet(group) )
 
     # from column 7 upwards, use the fieldnames to grab the data
     for field in columns[7:]:
