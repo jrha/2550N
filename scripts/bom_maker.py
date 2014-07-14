@@ -46,25 +46,15 @@ columnset = compfields | partfields     # union
 columns = ['Qty', 'Reference(s)', 'Value'] + sorted(list(columnset))
 
 # Create a new csv writer object to use as the output formatter
-out = csv.writer(f, lineterminator='\n', delimiter=',', quotechar='\"', quoting=csv.QUOTE_MINIMAL)
-
-# override csv.writer's writerow() to support utf8 encoding:
-def writerow( acsvwriter, columns ):
-    utf8row = []
-    for col in columns:
-        utf8row.append( str(col).encode('utf8') )
-    acsvwriter.writerow( utf8row )
+out = csv.writer(f, lineterminator='\n', delimiter=',', quotechar='\"', quoting=csv.QUOTE_NONNUMERIC)
 
 row = []
 
-writerow( out, columns ) # reuse same columns
-
-
+out.writerow(columns) # column titles
 
 # Get all of the components in groups of matching parts + values
 # (see kicad_netlist_reader.py)
 grouped = net.groupComponents(components)
-
 
 # Output component information organized by group, aka as collated:
 for group in grouped:
@@ -88,6 +78,6 @@ for group in grouped:
     for field in columns[7:]:
         row.append( net.getGroupField(group, field) );
 
-    writerow( out,  row  )
+    out.writerow(row)
 
 f.close()
