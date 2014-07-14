@@ -55,25 +55,8 @@ def writerow( acsvwriter, columns ):
         utf8row.append( str(col).encode('utf8') )
     acsvwriter.writerow( utf8row )
 
-# Output a set of rows as a header providing general information
-writerow( out, ['Source:', net.getSource()] )
-writerow( out, ['Date:', net.getDate()] )
-writerow( out, ['Tool:', net.getTool()] )
-writerow( out, ['Component Count:', len(components)] )
-writerow( out, [] )
-writerow( out, ['Individual Components:'] )
-writerow( out, [] )                        # blank line
-writerow( out, columns )
-
-# Output all the interesting components individually first:
 row = []
 
-writerow( out, [] )                        # blank line
-writerow( out, [] )                        # blank line
-writerow( out, [] )                        # blank line
-
-writerow( out, ['Collated Components:'] )
-writerow( out, [] )                        # blank line
 writerow( out, columns )                   # reuse same columns
 
 
