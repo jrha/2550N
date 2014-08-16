@@ -1917,13 +1917,13 @@ Text GLabel 5100 2150 2    60   Input ~ 0
 Relay5
 Text GLabel 14400 9300 0    60   Output ~ 0
 Relay3
-Text GLabel 15600 8900 2    60   Input ~ 0
-Relay8
 Text GLabel 15600 9100 2    60   Input ~ 0
+Relay8
+Text GLabel 15600 8900 2    60   Input ~ 0
 Relay7
-Text GLabel 15600 9200 2    60   Input ~ 0
-Relay5
 Text GLabel 15600 9400 2    60   Input ~ 0
+Relay5
+Text GLabel 15600 9200 2    60   Input ~ 0
 Relay6
 $Comp
 L RELAY_2RT K1
@@ -2922,4 +2922,18 @@ Text Notes 11650 2000 1    60   ~ 0
 Shielded
 NoConn ~ 14700 6400
 NoConn ~ 14700 6900
+Text Notes 14500 5400 0    60   ~ 0
+Red
+Text Notes 14500 5600 0    60   ~ 0
+White
+Text Notes 14500 5800 0    60   ~ 0
+Blue
+Text Notes 15300 5200 2    60   ~ 0
+Violet
+Text Notes 15300 5500 2    60   ~ 0
+Orange
+Text Notes 15300 5700 2    60   ~ 0
+Yellow
+Text Notes 15300 5900 2    60   ~ 0
+Black
 $EndSCHEMATC
